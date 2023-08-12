@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import Header from './components/header'
+import Todo from './components/todoBar';
+import { useState } from 'react';
+import  Modal  from './components/modal';
 function App() {
+  const [modalShow, setModalShow] = useState(false);
+  const [todo,setTodo] = useState([]);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header heading={"Todo List"} modal={setModalShow} />
+    <Todo todo={todo}/>
+    <Modal modalshow={modalShow} modal={setModalShow} todo={todo} setTodo={setTodo} />
+    </>
   );
 }
 
