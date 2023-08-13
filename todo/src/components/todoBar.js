@@ -22,7 +22,7 @@ export default function Todo(props)
                 props.todo.filter((ele)=> ele.status===props.filter).map((item,index)=>
                 <div className="todos" id={"todos-"+index} key={index}>
                     <div className="todo-name">
-                        <input type="checkbox" className="check" value={index} onClick={HandleCheck} defaultChecked={props.filter!="incomplete" ? true: false}/>
+                        <input type="checkbox" className="check" value={index} onClick={HandleCheck} defaultChecked={props.filter=="complete" ? true: false}/>
                         <div className="name">
                             <div className={`todo-heading ${item.status==='complete' ? 'checked' : ''}`} >
                             {item.title}

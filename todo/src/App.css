@@ -19,12 +19,12 @@ body{
 .btn-task{
   background-color: #646FF0;
   height: 50px;
-  width: 200px;
+  width: min(200px,40vw);
   font-size: 22px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .select{
-  width: 200px;
+  width: min(200px,40vw);
   background-color: #CCCDDE;
   color: var(--btn);
   cursor: pointer;
@@ -74,7 +74,7 @@ body{
   justify-content: center;
 }
 .msges{
-  width: 850px;
+  width: min(850px,80vw);
   min-height: 100px;
   margin-top: 2%;
   border-radius: 12px;
@@ -132,4 +132,18 @@ width: max-content;
 }
 .checked{
   text-decoration: line-through;
+}
+@media screen and (max-width:520px)
+{
+  .msges{
+    width: 100vw;
+    height: 60vh;
+  }
+  .todos{
+    height: 13vh;
+   }
+  .check{
+    width: 27px;
+    height: 50px;
+  }
 }
