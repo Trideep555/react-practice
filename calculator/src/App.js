@@ -8,6 +8,10 @@ function App() {
   const [error,seterror]=useState("");
   const [mode,setMode] = useState(false)
    const HandleSubmit = ()=>{
+      if(query===""){
+      setQuery("0");
+      return;
+      }
       try
       {
         setQuery(eval(query));

@@ -37,9 +37,13 @@ body{
   padding-right: 2rem;
   font-size: 3rem;
   display: flex;
-  justify-content: flex-end;
-  flex: 1;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   overflow: auto;
+ }
+ .screen::-webkit-scrollbar{
+  display: none;
  }
 .light{
   background-color: aliceblue;
