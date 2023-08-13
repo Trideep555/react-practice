@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap');
+@font-face {
+  font-family: 'calculator';
+  src: url("Digital7-rg1mL.ttf");
+}
+body{
+  display: grid;
+  place-items: center;
+}
+.calculator{
+  margin-top: 30% ;
+  height: 60vh;
+  width: 25vw;
+  
+  padding: 1rem;
+  background-color: #3B313A;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand{
+  color:white;
+  font-size: 2.8rem;
+  font-family: 'Teko', sans-serif;
+}
+.switch-btn{
+  margin-top: -12%;
+ transform: scale(1.5);
+ }
+
+.screen{
+  background-color: #DEE6E9;
+  font-family: 'calculator';
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+  overflow: auto;
+ }
+.light{
+  background-color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+}
+.light>.header>.brand{
+  color:#3B313A;
+}
+.buttons{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-top: 2%;
+  gap: 4px;
+}
+.lighter>.button{
+  background-color: #a9a9a9 ;
+  color:#3B313A;
+  
+}
+.button{
+  background-color: #51434f ;
+  box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.1);
+  height: 3.4vw;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#btn-0{
+  grid-column: span 2;
+}
+button:hover {background-color: orange}
+
+.button:active {
+  background-color: orange;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}

@@ -2,13 +2,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './components/header'
 import Todo from './components/todoBar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import  Modal  from './components/modal';
 function App() {
   const [modalShow, setModalShow] = useState(false);
-  const [todo,setTodo] = useState([]);
+  const [todo,setTodo] = useState(window.localStorage.getItem('props') ? JSON.parse(window.localStorage.getItem('props')):[]);
   const [filt,setFilt] = useState("All")
-  const [modalData,setModalData]=useState({title:"",status:"incomplete",time:"",day:"",index:-1});
+  const [modalData,setModalData]=useState( {title:"",status:"incomplete",time:"",day:"",index:-1});
+  useEffect(() => {
+    window.localStorage.setItem("props",JSON.stringify(todo));
+  
+
+}, [todo]);
+
   return (
     <>
     <Header heading={"Todo List"} modal={setModalShow} filter={filt} setFilter={setFilt} />

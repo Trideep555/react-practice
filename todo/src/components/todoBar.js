@@ -3,7 +3,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Todo(props) 
 {
-    console.log(props.todo.filter((ele)=> ele.status===props.filter))
+    //console.log(props.todo.filter((ele)=> ele.status===props.filter))
+    
     const HandleCheck = (event) =>{
         console.log("clicked")
         let arr=[...props.todo];
