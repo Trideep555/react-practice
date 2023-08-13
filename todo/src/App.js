@@ -7,12 +7,12 @@ import  Modal  from './components/modal';
 function App() {
   const [modalShow, setModalShow] = useState(false);
   const [todo,setTodo] = useState([]);
-  
+  const [modalData,setModalData]=useState({title:"",status:"incomplete",time:"",day:"",index:-1});
   return (
     <>
     <Header heading={"Todo List"} modal={setModalShow} />
-    <Todo todo={todo}/>
-    <Modal modalshow={modalShow} modal={setModalShow} todo={todo} setTodo={setTodo} />
+    <Todo todo={todo} setTodo={setTodo} modal={setModalShow} setdata={setModalData} data={modalData}/>
+    <Modal modalshow={modalShow} modal={setModalShow} todo={todo} setTodo={setTodo} data={modalData} />
     </>
   );
 }

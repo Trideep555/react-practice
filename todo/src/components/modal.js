@@ -1,12 +1,15 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ToastContainer,toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function ModalShow(props) { 
-    const [data,setData]=useState({title:"",status:"Incomplete"})
+    const [data,setData]=useState({title:"",status:"",time:"",day:""})
+    useEffect(()=>{
+      setData(props.data);
+    },[props.data])
     const HandleChange= (event) =>{
       if(event.target.name==="title")
       setData({...data,[event.target.name]: event.target.value});
@@ -27,7 +30,47 @@ export default function ModalShow(props) {
           });
           return;
     }
+    if(props.data.status==="")
+    {
+      setData({...data,status: "Incomplete"});
+    
+    }
+    if(props.data.title==='')
+    toast.success("Todo Added Succesfully", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+      else
+      toast.success("Todo Updated Succesfully", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
+        
+
+      data["day"]=new Date().toLocaleDateString();
+      data["time"]=new Date().toLocaleTimeString();      
+      props.modal(false);
+      if(props.data.title==="")
       props.setTodo(ele => [...ele,data]);
+      else
+      {
+        let newarr=[...props.todo];
+        newarr[props.data.index]=data;
+        props.setTodo(newarr);
+      }
+      setData({title: "",status:"incomplete",day:"",time:""})
       
     }
     return(<>
@@ -54,7 +97,7 @@ export default function ModalShow(props) {
       
     <Form.Label htmlFor="status">Status</Form.Label>
         
-    <Form.Select aria-label="Default select example" name="status" onChange={HandleChange}>
+    <Form.Select aria-label="Default select example" name="status" value={data.status==="" ? props.data.status : data.status } onChange={HandleChange}>
       <option value="incomplete">Incompleted</option>
       <option value="complete">Completed</option>
       

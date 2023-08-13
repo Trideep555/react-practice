@@ -79,6 +79,9 @@ body{
   margin-top: 2%;
   border-radius: 12px;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
   background-color: #ecedf6;
 }
 .no-todo{
@@ -97,5 +100,36 @@ width: max-content;
 .todos{
   background-color: white;
   width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+}
+.name{
+  display:flex;
+  flex-direction: column;
+  margin-top: 3%;
+}
+.todo-name{
+  display: flex;
+  gap:10px;
+  padding-left: 4%;
+  font-family: sans-serif;
+}
+.check{
+  width: 3vw;
   height: 5vh;
+  align-self: center;
+}
+.todo-buttons{
+  display: flex;
+}
+.edit{
+  margin-right: 20px;
+  font-size: 25px;
+  margin-top: 10px;
+  color: #585858!important;
+  cursor: pointer;
+}
+.checked{
+  text-decoration: line-through;
 }
