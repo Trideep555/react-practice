@@ -1,0 +1,75 @@
+.filters{
+  margin-top: 2%;
+  margin-left: 2%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pills{
+  height: 2rem;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D35C8B !important;
+  cursor: pointer;
+}
+.pillsfilt{
+  height: 2rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D35C8B !important;
+  cursor: pointer;
+}
+.heading{
+  text-align: center;
+  margin-top: 2%;
+  text-decoration: underline;
+  text-decoration-color: #D35C8B;
+  text-decoration-thickness: 2px;
+}
+
+.card-grp{
+  display: flex;
+  flex-wrap: wrap;
+  gap:30px;
+  margin-top: 2%;
+}
+.image{
+  height: 25vh;
+}
+.title{
+  font-size: 1.2rem;
+}
+.author,.publish{
+  font-size: 0.8rem;
+}
+.publish{
+  padding-bottom: 28px;
+}
+.read{
+  background-color: #D35C8B !important;
+  position: absolute;
+  bottom:5px;
+  margin: auto 0;
+}
+.more{
+  color:white;
+  text-decoration: none;
+}
+.more:hover{
+  color:white;
+}
+.more:active{
+  color: white;
+}
+.load{
+  margin-top: 5%;
+  background-color: #D35C8B !important;
+  width: 300px;
+  margin-bottom: 5%;
+}
+.active{
+  background-color: #9c4366 !important;
+}
