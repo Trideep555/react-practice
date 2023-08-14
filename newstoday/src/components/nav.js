@@ -5,7 +5,6 @@ import logo from '../logo.png';
 import {  useState } from 'react';
 export default function Nav(props) 
 {
-
     const [search,setsearch] = useState("");
     
     return(
