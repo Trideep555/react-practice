@@ -13,6 +13,16 @@ export default function Card(props) {
     date={props.value===0 ? item.release_date: item.first_air_date} 
 />
 
+)) : props.value==3 ?props.card.map((item,index)=> (
+    <NewsHeaderCard
+    key={index}
+    className='cards'
+    thumbnail={item.background_image ? item.background_image: item.image_background }
+    title={item.name}
+    author={item.rating ? item.rating+'⭐': item.games_count+" Games"}
+    date={item.released}
+    />
+
 )) : props.query=="" ? props.card.map((item,index)=> (
      
     <NewsHeaderCard

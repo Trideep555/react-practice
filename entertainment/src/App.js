@@ -57,6 +57,7 @@ else{
   });
 }
 
+
 }
  if(value===2 && data!=="")
  {
@@ -77,6 +78,25 @@ else{
   });
     }
  }  
+ if(value===3 && data!=='')
+ {
+    if(query==='')
+    {
+      let gamedata=data.toLowerCase();
+      axios.get(`https://api.rawg.io/api/${gamedata}?page=${page}&page_size=20&key=${process.env.REACT_APP_GAMES_API}`).then(res =>{ 
+      setCard(res.data.results);
+    setTotalPage(res.data.count/20);
+    isLoading(false);
+  });
+    }
+    else{
+      axios.get(`https://api.rawg.io/api/games?page=${page}&page_size=20&key=${process.env.REACT_APP_GAMES_API}&search=${query}`).then(res =>{ 
+      setCard(res.data.results);
+    setTotalPage(res.data.count/20);
+    isLoading(false);
+  });
+    }
+ }
       
     
   },[data,value,page,query]) 
