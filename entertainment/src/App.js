@@ -56,8 +56,27 @@ else{
     isLoading(false);
   });
 }
+
 }
-   
+ if(value===2 && data!=="")
+ {
+    if(query==="")
+    {
+      let songdata=data.toLowerCase();
+      axios.get(`https://saavn.me/search/${songdata}?query=-&page=${page}`).then(res =>{ 
+    setCard(res.data.data.results);
+    setTotalPage(res.data.data.total);
+    isLoading(false);
+  });
+    }
+    else{
+      axios.get(`https://saavn.me/search/all?query=${query}&page=${page}`).then(res =>{ 
+      setCard(res.data.data.songs.results);
+    setTotalPage(1);
+    isLoading(false);
+  });
+    }
+ }  
       
     
   },[data,value,page,query]) 
@@ -84,7 +103,7 @@ else{
 
 />:  ""}
       </div>
-      <Card card={card} value={value} />
+      <Card card={card} value={value} query={query} data={data} />
       <div className="load-more">
        {page-1===0 ? "" : <><button type='text' onClick={()=> setpage(page-1)} className='more'>Previous</button></> }
        {totalPage<page+1 ? "" : <><button type='text' onClick={()=> setpage(page+1)} className='more'>Next</button></> }

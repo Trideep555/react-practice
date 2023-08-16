@@ -18,7 +18,7 @@ export default function BottomNav(props) {
       >
         <BottomNavigationAction onClick={()=> { props.setData("Now Playing"); props.page(1); props.total_page(1); props.setQuery(""); }}  label="Movies" icon={<MovieIcon className='icon' />} />
         <BottomNavigationAction onClick={()=> { props.setData("Airing Today"); props.page(1); props.total_page(1); props.setQuery(""); }} label="TV Series" icon={<TvIcon className='icon' />} />
-        <BottomNavigationAction label="Music" icon={<MusicNoteIcon className='icon' />} />
+        <BottomNavigationAction onClick={()=> { props.setData("Songs"); props.page(1); props.total_page(1); props.setQuery(""); }} label="Music" icon={<MusicNoteIcon className='icon' />} />
         <BottomNavigationAction label="Games" icon={<SportsEsportsIcon className='icon' />} />
         
       </BottomNavigation>
