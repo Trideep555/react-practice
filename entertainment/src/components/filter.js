@@ -9,7 +9,7 @@ export default function Filter(props)
         if(props.filter===0)
         setFilt({0 : "Now Playing",1:"Popular",2:"Top Rated",3:"Upcoming"})
         else if(props.filter===1)
-        setFilt({0 : "Airing Today",1:"On the Air",2:"Top Rated",3:"Popular"})
+        setFilt({0 : "Popular",1:"Top Rated",2:"On the Air",3:"Airing Today"})
         else if(props.filter===2)
         setFilt({0 : "Songs",1:"Albums",2:"Artists"})
         else

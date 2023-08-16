@@ -8,14 +8,21 @@ export default function ModalData(props) {
     const [data,setData]=useState("");
     useEffect(()=>{
             if(props.data!==""){
+              if(props.value===0)
             axios.get(`https://api.themoviedb.org/3/movie/${props.data}?api_key=${process.env.REACT_APP_MOVIE_API}&append_to_response=videos,credits`).then(res =>
             {
                 setData(res.data);
             })
+            else
+            axios.get(`https://api.themoviedb.org/3/tv/${props.data}?api_key=${process.env.REACT_APP_MOVIE_API}&append_to_response=videos,credits`).then(res =>
+            {
+                setData(res.data);
+            })
+            
         
         }
         
-    },[props.data])
+    },[props.data,props.value])
     return(<>
      {data!=="" && <Modal
         show={props.modalShow && data!==""}
@@ -41,7 +48,7 @@ export default function ModalData(props) {
           <div className='act-photos'>
           {data!=="" && data.credits.cast.filter(ele => ele.known_for_department==='Acting').slice(0,6).map((item2,index2)=>(
             <div className="actors" key={index2}>
-              <img src={`https://image.tmdb.org/t/p/w500/${item2.profile_path}`} height="100" width="100" className='act-pic' alt={`act ${index2}`} />
+              <img src={item2.profile_path ? `https://image.tmdb.org/t/p/w500/${item2.profile_path}`: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"} height="100" width="100" className='act-pic' alt={`act ${index2}`} />
               {item2.name}
             </div>            
           ))}
