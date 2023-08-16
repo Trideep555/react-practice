@@ -1,0 +1,103 @@
+.header{
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  background-color: #030e30;
+  font-size: 5rem;
+  color:aliceblue;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1000;
+}
+.logo{
+  height: 10vh;
+  width: 10vh;
+}
+.bottomnav{
+  background-color: #030e30 !important;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.filter{
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  flex-wrap: wrap;
+  gap:10px;
+}
+.icon{
+  color:aliceblue; 
+  
+}
+.pills{
+  width: 150px;
+  height: 35px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  cursor: pointer;
+}
+
+.MuiBottomNavigationAction-label{
+  color:aliceblue !important;
+}
+.Mui-selected{
+  color: blue !important;
+}
+.search-bar{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+.searchbar{
+  width: min(400px,70vw);
+  padding: 0px 25px;
+  height: min(50px,10vw);
+}
+.loader{
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+}
+.movie{
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+  margin-left: 2%;  
+}
+.load-more{
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  gap:10px;
+}
+.more{
+  border-radius: 20px;
+  width: min(300px,60vw);
+  height: 30px;
+  background-color: aliceblue;
+  color:#030e30;
+  font-weight: 800;
+}
+@media screen and (max-width: 766px) {
+    .header{
+      font-size: 1.9rem;
+    }
+    .logo{
+      height: 8vh;
+      width: 8vh;
+    }
+    
+}
+@media screen and (max-width: 426px) {
+  .movie{
+    justify-content: center;
+    
+  } 
+  .cards{
+    width: 91vw !important;
+  } 
+}
