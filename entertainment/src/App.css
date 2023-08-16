@@ -31,6 +31,50 @@
   color:aliceblue; 
   
 }
+.modal-height{
+  height: min(800px,60vh) !important;
+}
+
+
+.panel{
+  flex-wrap: wrap!important;
+  height: 100%;
+  justify-content: space-between !important;
+}
+.trailer{
+  width: 100%;
+  height: 100%;
+}
+.video{
+  flex-basis: 50%;
+}
+.content{
+  flex-basis: 40%;
+  margin-left: 5%;
+  max-height: 350px !important;
+  overflow:scroll ;
+}
+.content::-webkit-scrollbar{
+  display: none;
+}
+.genres{
+  display: flex;
+  flex-wrap: wrap;
+  gap:10px;
+}
+.act-photos{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  flex-wrap: wrap;
+}
+.act-pic{
+  border-radius: 100%;
+  justify-self: center;
+}
+.actors{
+  display: flex;
+  flex-direction: column;
+}
 .pills{
   width: 150px;
   height: 35px;
@@ -38,6 +82,10 @@
   justify-content: center !important;
   align-items: center !important;
   cursor: pointer;
+}
+.pill2{
+  width: 140px;
+  
 }
 
 .MuiBottomNavigationAction-label{
@@ -74,6 +122,10 @@
   margin-bottom: 5%;
   gap:10px;
 }
+.dark{
+  background-color: #030e30 !important;
+  color:aliceblue;
+}
 .more{
   border-radius: 20px;
   width: min(300px,60vw);
@@ -81,6 +133,9 @@
   background-color: aliceblue;
   color:#030e30;
   font-weight: 800;
+}
+.overview{
+  font-size: 2rem;
 }
 @media screen and (max-width: 766px) {
     .header{
@@ -100,4 +155,14 @@
   .cards{
     width: 91vw !important;
   } 
+  .video{
+    flex-basis: 100%;
+  }
+  .content{
+    flex-basis: 100%;
+    margin-top: 9vh;
+  }
+  .trailer{
+    aspect-ratio: 16/9;
+  }
 }

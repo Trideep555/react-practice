@@ -7,7 +7,9 @@ import Card from './components/cards';
 import { useEffect, useState } from 'react';
 import axios from 'axios';   
 import {Oval} from 'react-loader-spinner'
+import Modal from './components/modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   const [value, setValue] = useState(0);
   const[data,setData]=useState("Now Playing");
@@ -16,6 +18,9 @@ function App() {
   const [page,setpage]= useState(1);
   const [totalPage,setTotalPage] = useState(1);
   const [query,setQuery] =useState("")
+  const [modalShow, setModalShow] = useState(false);
+  const [modalData, setModalData] = useState("");
+  
   useEffect(()=>{
     
     isLoading(true);
@@ -123,13 +128,13 @@ else{
 
 />:  ""}
       </div>
-      <Card card={card} value={value} query={query} data={data} />
+      <Card card={card} value={value} query={query} data={data} setModalShow={setModalShow} modaldata={modalData} setModalData={setModalData}  />
       <div className="load-more">
        {page-1===0 ? "" : <><button type='text' onClick={()=> setpage(page-1)} className='more'>Previous</button></> }
        {totalPage<page+1 ? "" : <><button type='text' onClick={()=> setpage(page+1)} className='more'>Next</button></> }
       </div>
       <BottomNav query={query} setQuery={setQuery}  value={value} page={setpage} total_page={setTotalPage} data={data} setData={setData} setValue={setValue}/>
-      
+      <Modal  modalShow={modalShow} setModalShow={setModalShow} data={modalData} setdata={setModalData}   />
     </>
   );
 }
