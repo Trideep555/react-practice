@@ -16,7 +16,7 @@ export default function Card(props) {
 
 )) : props.value===3 ?props.card.map((item,index)=> (
     <NewsHeaderCard
-    onClick={()=> { props.setModalShow(true)}}
+    onClick={()=> { props.setModalShow(true); props.setModalData(item.id);}}
     key={index}
     className='cards'
     thumbnail={item.background_image ? item.background_image: item.image_background }
@@ -28,7 +28,7 @@ export default function Card(props) {
 )) : props.query==="" ? props.card.map((item,index)=> (
      
     <NewsHeaderCard
-    onClick={()=> { props.setModalShow(true)}}
+    onClick={()=> { props.setModalShow(true); props.setModalData(item.id)}}
     key={index}
     className='cards'
     
@@ -40,7 +40,7 @@ export default function Card(props) {
     /> )) : <>
     {props.card.map((item,index) => (
     <NewsHeaderCard
-    onClick={()=> { props.setModalShow(true)}}
+    onClick={()=> { props.setModalShow(true); props.setModalData(item.id)}}
     key={index}
     className='cards'
     

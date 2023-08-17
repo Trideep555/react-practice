@@ -134,7 +134,7 @@ else{
        {totalPage<page+1 ? "" : <><button type='text' onClick={()=> setpage(page+1)} className='more'>Next</button></> }
       </div>
       <BottomNav query={query} setQuery={setQuery}  value={value} page={setpage} total_page={setTotalPage} data={data} setData={setData} setValue={setValue}/>
-      <Modal  modalShow={modalShow} setModalShow={setModalShow} data={modalData} setdata={setModalData}   />
+      <Modal  modalShow={modalShow} value={value} setModalShow={setModalShow} type={data} data={modalData} setdata={setModalData}   />
     </>
   );
 }
