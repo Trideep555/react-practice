@@ -1,4 +1,4 @@
-Entertain App - Full API handling with axios
+# Entertain App - Full API handling with axios
 
 4 Tabs with sub-filtering
 Movies- Browse though popular,top-rated,new movies with trailer description as well as actors with images
