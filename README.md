@@ -28,3 +28,8 @@ Tv - Browse though popular,top-rated,new movies with trailer description, season
 Music - Different Music of all genres and languages have an option to play music fully integreted with jio savaan api
 Games- Different games,developers,stores listed with overview screenshots of the games as well as genres and ratings
 
+# Project No - 5
+Notes App using Tailwind and Redux
+Simple Notes Keeping App Inspired From Google Keep
+Used Redux toolkit Store to keep track of the Notes
+Notes are saved with localStorage 
