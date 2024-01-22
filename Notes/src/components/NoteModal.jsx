@@ -40,8 +40,8 @@ const NoteModal = ({ isOpen,setIsOpen, closeModal,filterData,upFilterData , titl
       closeModal();
     }
     return (
-      <div className="fixed  inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
-        <div className="relative  w-auto  mx-auto my-6">
+      <div className="fixed  inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto  outline-none backdrop-blur-sm focus:outline-none">
+        <div className="relative  w-auto  mx-auto my-6  ">
           {/* Modal content */}
           <div className="relative  h-[60vh] w-[40vw] flex flex-col  overflow-hidden bg-[#262523] rounded-md mx-4 my-4 shadow-[rgba(50,50,93,0.25)_0px_30px_50px_-12px_inset,rgba(0,0,0,0.3)_0px_18px_26px_-18px_inset]">
             <div className="p-4 h-[75%]">
